@@ -4,9 +4,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { LandingRoutingModule } from './landing-routing.module';
 import { LandingComponent } from './landing.component';
+import { InicioComponent } from '@components/inicio/inicio.component';
 
 @NgModule({
-  declarations: [LandingComponent],
+  declarations: [LandingComponent, InicioComponent],
   imports: [CommonModule, LandingRoutingModule, FontAwesomeModule],
 })
 export class LandingModule {}

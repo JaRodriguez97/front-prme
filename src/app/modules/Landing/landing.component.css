@@ -19,17 +19,12 @@ header.sticky {
 }
 
 header .logo {
-  color: var(--letrasTitulosColor);
-  font-size: 24px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-wrap: nowrap;
-  color: var(--colorPrincipal);
   padding: 10px;
   transition: all 400ms;
   margin-inline: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 header .logo:hover {
@@ -106,6 +101,7 @@ header.sticky nav ul li a:hover {
   right: 50px;
   bottom: 0;
   padding: 20px;
+  z-index: 5;
 }
 
 .redes li a::before {

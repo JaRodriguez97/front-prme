@@ -18,7 +18,14 @@
     </ul>
   </nav>
 
-  <a [routerLink]="'/'" (click)="toogleMenu()" class="logo">PR-ME</a>
+  <a [routerLink]="'/'" (click)="toogleMenu()" class="logo">
+    <img
+      src="../../../assets/icons/RP FONDO TRASPARENTE50.png"
+      alt=""
+      title=""
+      width="50"
+    />
+  </a>
 
   <nav class="rigth">
     <ul [ngClass]="{ menu: true, active: publicService.menu }">
@@ -35,6 +42,10 @@
 <!-- fin header -->
 
 <!-- botones redes sociales -->
+<!-- <header
+  *ngIf="publicService.imgIndex"
+  [ngClass]="{ sticky: publicService.sticky }"
+> -->
 <ul class="redes">
   <li>
     <a href="https://www.facebook.com/" target="_blank">
@@ -54,9 +65,14 @@
 </ul>
 
 <!-- lineas punteadas -->
-
+<!-- <header
+  *ngIf="publicService.imgIndex"
+  [ngClass]="{ sticky: publicService.sticky }"
+> -->
 <ul class="lineas">
   <li></li>
   <li></li>
   <li></li>
 </ul>
+
+<app-inicio></app-inicio>

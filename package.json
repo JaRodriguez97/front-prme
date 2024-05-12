@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "c": "ng g c components/favorites --skip-import",
+    "c": "ng g c components/contacto --skip-import",
     "m": "ng g m modules/Landing/Landing -m=app --route Landing --flat",
     "dev": "ng serve -o",
     "start": "ng serve",

@@ -29,6 +29,6 @@ export class AppComponent implements OnInit {
       let bg = this.publicService.animateBackground();
 
       this.render.setAttribute(this.preload.nativeElement, 'style', bg);
-    }, 30);
+    }, 40);
   }
 }
