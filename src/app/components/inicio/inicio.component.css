@@ -20,7 +20,8 @@ section h1 span {
 
 section h1 strong,
 section h1 strong span {
-  color: #02c4fa20;
+  /* color: #02c4fa20; */
+  color: #00191f;
   /* color: #1b1bff20; */
   -webkit-text-stroke: 5px var(--colorPrincipal);
   background-color: var(--backgroundColorPrincipal);
@@ -28,10 +29,68 @@ section h1 strong span {
   border-radius: 50px;
   position: relative;
   font-style: italic;
-  text-shadow: 0px 0px 25px var(--colorPrincipal);
+  /* text-shadow: 0px 0px 5px var(--colorPrincipal),
+    0px 0px 10px var(--colorPrincipal), 0px 0px 20px var(--colorPrincipal),
+    0px 0px 40px var(--colorPrincipal); */
 }
 
-section img {
+section > article {
+  position: relative;
+  bottom: 150px;
+  min-width: 100px;
+  height: 100px;
+  left: -100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+section > article fa-icon {
+  position: absolute;
+  width: 50px;
+  background: #fff;
+  color: var(--colorSecundario);
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section > article div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+section > article div label {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  font-size: 0.6em;
+  transform-origin: 0 100px;
+  font-weight: bolder;
+}
+
+section > div {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  bottom: 5vh;
+  left: 0;
+  z-index: 4;
+}
+
+section > div img {
+  /* width: 100%; */
+  border-radius: 0 50px 50px 0;
+  filter: invert(1);
+  border: 1px solid white;
+}
+
+section > img {
   position: relative;
   bottom: 60px;
   /* border-radius: 50px; */
@@ -41,7 +100,7 @@ section img {
   transform: rotateY(180deg);
 }
 
-section fa-icon {
+section > fa-icon {
   color: var(--colorSecundario);
   position: absolute;
   display: flex;
@@ -58,7 +117,7 @@ section fa-icon {
   z-index: 1;
 }
 
-section fa-icon::before {
+section > fa-icon::before {
   content: "";
   position: absolute;
 
@@ -73,7 +132,7 @@ section fa-icon::before {
   z-index: -1;
 }
 
-section p {
+section > p {
   position: absolute;
   right: 7vw;
   top: 170px;

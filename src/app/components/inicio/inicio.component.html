@@ -3,6 +3,31 @@
     RELACIONES PUBLICAS CON <strong>MARKETING <span>ESTRATÉGICO</span></strong>
   </h1>
 
+  <article>
+    <fa-icon [icon]="faFlagCheckered"></fa-icon>
+    <div>
+      <p>
+        <label
+          *ngFor="let char of arrayFrase; let i = index"
+          [style]="setStyleSpan(i)"
+          >{{ char }}</label
+        >
+      </p>
+    </div>
+  </article>
+
+  <div>
+    <img
+      src="../../../assets/imagenes/inicio/img2.jpg"
+      alt=""
+      alt=""
+      title=""
+      width="298"
+      height="148"
+      (load)="imagen2cargada()"
+    />
+  </div>
+
   <img
     src="../../../assets/imagenes/inicio/img1.jpg"
     alt=""
@@ -13,6 +38,5 @@
   />
 
   <fa-icon [icon]="faTrophy"></fa-icon>
-
-  <p>Agencia de Pubilicidad Profesional y de Calidad</p>
+  <p>Agencia de Pubilicidad Profesional.</p>
 </section>
