@@ -62,6 +62,15 @@ body {
   background-color: var(--backgroundColorSecundario);
 }
 
+a {
+  -webkit-tap-highlight-color: transparent; /* Para navegadores basados en WebKit (como Safari y Chrome) */
+  -webkit-touch-callout: none; /* Evita que se muestre el menú de selección en dispositivos iOS */
+  -webkit-user-select: none; /* Evita la selección de texto en dispositivos iOS */
+  -moz-user-select: none; /* Evita la selección de texto en navegadores basados en Gecko */
+  -ms-user-select: none; /* Evita la selección de texto en Internet Explorer */
+  user-select: none; /* Evita la selección de texto en otros navegadores */
+}
+
 p {
   color: var(--letrasParrafosColor);
 }

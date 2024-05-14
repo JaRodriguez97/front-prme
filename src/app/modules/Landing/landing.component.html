@@ -6,7 +6,7 @@
     [ngClass]="{ active: publicService.menuToggle, toggle: true }"
     (click)="toogleMenu()"
   ></div>
-  <nav class="left">
+  <nav [ngClass]="{ left: true, active: publicService.menu }">
     <ul [ngClass]="{ menu: true, active: publicService.menu }">
       <li>
         <a [routerLink]="'/nosotros'" (click)="toogleMenu()">Nosotros</a>
@@ -26,8 +26,8 @@
     />
   </a>
 
-  <nav class="rigth">
-    <ul [ngClass]="{ menu: true, active: publicService.menu }">
+  <nav [ngClass]="{ rigth: true, active: publicService.menu }">
+    <ul>
       <li>
         <a [routerLink]="'/trabajos'" (click)="toogleMenu()">Trabajos</a>
       </li>
@@ -41,7 +41,11 @@
 <!-- fin header -->
 
 <!-- botones redes sociales -->
-<ul class="redes" *ngIf="publicService.img1Inicio">
+<ul
+  class="redes"
+  *ngIf="publicService.img1Inicio"
+  [ngClass]="{ active: publicService.menu }"
+>
   <li>
     <a href="https://www.facebook.com/" target="_blank">
       <fa-icon [icon]="faFacebook" aria-hidden="true"></fa-icon>

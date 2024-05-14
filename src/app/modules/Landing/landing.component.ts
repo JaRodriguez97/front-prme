@@ -25,7 +25,7 @@ export class LandingComponent implements OnInit {
   ngAfterViewInit() {
     setInterval(() => {
       if (this.publicService.img2Inicio) this.publicService.stopInterval();
-    }, 1000);
+    }, 2000);
   }
 
   toogleMenu() {
