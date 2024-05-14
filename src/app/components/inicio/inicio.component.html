@@ -3,7 +3,7 @@
     RELACIONES PUBLICAS CON <strong>MARKETING <span>ESTRATÉGICO</span></strong>
   </h1>
 
-  <article>
+  <article *ngIf="publicService.img2Inicio">
     <fa-icon [icon]="faFlagCheckered"></fa-icon>
     <div>
       <p>
@@ -16,7 +16,7 @@
     </div>
   </article>
 
-  <div>
+  <div *ngIf="publicService.img1Inicio">
     <img
       src="../../../assets/imagenes/inicio/img2.jpg"
       alt=""
@@ -29,6 +29,7 @@
   </div>
 
   <img
+    *ngIf="publicService.load || publicService.img2Inicio"
     src="../../../assets/imagenes/inicio/img1.jpg"
     alt=""
     title=""

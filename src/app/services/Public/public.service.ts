@@ -13,7 +13,10 @@ export class PublicService {
   public isBrowser!: boolean;
   public isMobile!: boolean;
   public sticky!: boolean;
-  public imgIndex!: boolean;
+
+  public img1Inicio!: boolean;
+  public img2Inicio!: boolean;
+  
   public imgNosotros!: boolean;
   public show!: boolean;
   public menuToggle!: boolean;

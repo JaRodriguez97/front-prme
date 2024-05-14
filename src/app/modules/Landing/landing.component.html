@@ -1,8 +1,7 @@
-<header [ngClass]="{ sticky: publicService.sticky }">
-  <!-- <header
-  *ngIf="publicService.imgIndex"
+<header
   [ngClass]="{ sticky: publicService.sticky }"
-> -->
+  *ngIf="publicService.img1Inicio"
+>
   <div
     [ngClass]="{ active: publicService.menuToggle, toggle: true }"
     (click)="toogleMenu()"
@@ -42,11 +41,7 @@
 <!-- fin header -->
 
 <!-- botones redes sociales -->
-<!-- <header
-  *ngIf="publicService.imgIndex"
-  [ngClass]="{ sticky: publicService.sticky }"
-> -->
-<ul class="redes">
+<ul class="redes" *ngIf="publicService.img1Inicio">
   <li>
     <a href="https://www.facebook.com/" target="_blank">
       <fa-icon [icon]="faFacebook" aria-hidden="true"></fa-icon>
@@ -65,11 +60,7 @@
 </ul>
 
 <!-- lineas punteadas -->
-<!-- <header
-  *ngIf="publicService.imgIndex"
-  [ngClass]="{ sticky: publicService.sticky }"
-> -->
-<ul class="lineas">
+<ul class="lineas" *ngIf="publicService.img1Inicio">
   <li></li>
   <li></li>
   <li></li>

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '@app/services/Public/public.service';
-import { faWhatsapp, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {
+  faWhatsapp,
+  faFacebook,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -13,14 +17,14 @@ export class LandingComponent implements OnInit {
   faWhatsapp = faWhatsapp;
   faFacebook = faFacebook;
   faInstagram = faInstagram;
-  
+
   constructor(public publicService: PublicService) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.publicService.stopInterval();
+    setInterval(() => {
+      if (this.publicService.img2Inicio) this.publicService.stopInterval();
     }, 1000);
   }
 

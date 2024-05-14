@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '@app/services/Public/public.service';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
-import {  faFlagCheckered } from '@fortawesome/free-solid-svg-icons';
+import { faFlagCheckered } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-inicio',
@@ -21,10 +21,12 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  imagen1cargada() {}
+  imagen1cargada() {
+    this.publicService.img1Inicio = true;
+  }
 
-  imagen2cargada(){
-    
+  imagen2cargada() {
+    this.publicService.img2Inicio = true;
   }
 
   setStyleSpan(i: number) {
