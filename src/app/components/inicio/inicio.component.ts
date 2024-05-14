@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '@app/services/Public/public.service';
-import { faTrophy, faFlagCheckered } from '@fortawesome/free-solid-svg-icons';
+import { faAngular } from '@fortawesome/free-brands-svg-icons';
+import {  faFlagCheckered } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-inicio',
@@ -8,7 +9,7 @@ import { faTrophy, faFlagCheckered } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./inicio.component.css'],
 })
 export class InicioComponent implements OnInit {
-  faTrophy = faTrophy;
+  faTrophy = faAngular;
   faFlagCheckered = faFlagCheckered;
   frase: string = 'Atraiga mas clientes y alcance sus metas con nosotros - ';
 
