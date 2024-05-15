@@ -180,11 +180,11 @@ section > p {
     height: 100px;
     bottom: 10vh;
     left: 10vw;
+  }
 
-    img {
-      width: 100%;
-      height: 100%;
-    }
+  section > div img {
+    width: 100%;
+    height: 100%;
   }
 
   section > article {
