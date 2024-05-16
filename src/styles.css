@@ -92,3 +92,9 @@ section {
   height: 100vh;
   padding: 15vh 10vw 5vh;
 }
+
+@media (max-width: 550px) {
+  section {
+    padding: 15vh 5vw 5vh;
+  }
+}

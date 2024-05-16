@@ -217,7 +217,11 @@ section > p {
 }
 
 @media (max-width: 550px) {
-  /* section > img {
-    /* bottom: 120px; 
-  } */
+  section h1 {
+    bottom: -25vh;
+  }
+
+  section > div {
+    height: 15vh;
+  }
 }
