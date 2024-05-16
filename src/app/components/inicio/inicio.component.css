@@ -191,7 +191,7 @@ section > img {
 
   section > div {
     height: 20vh;
-    bottom: 1vh;
+    bottom: 5vh;
     left: 5vw;
     top: auto;
     width: 75vw;
@@ -199,7 +199,7 @@ section > img {
 
   section > img {
     right: 35%;
-    bottom: 48vh;
+    bottom: 50vh;
     border-radius: 0;
     left: auto;
     opacity: 0.5;
