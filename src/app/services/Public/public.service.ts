@@ -9,14 +9,14 @@ import { environment } from '@env/environment';
 export class PublicService {
   // URL = environment.urlBack + 'contact/';
 
-  public interval!: any;
+  // public interval!: any;
   public isBrowser!: boolean;
   public isMobile!: boolean;
   public sticky!: boolean;
 
   public img1Inicio!: boolean;
   public img2Inicio!: boolean;
-  
+
   public imgNosotros!: boolean;
   public show!: boolean;
   public menuToggle!: boolean;
@@ -26,7 +26,7 @@ export class PublicService {
   public trabajos!: boolean;
   public testimonios!: boolean;
   public load: boolean = true;
-  public transparentes = Array(15).fill('transparent');
+  public transparentes: Array<string> = Array(15).fill('transparent');
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -98,7 +98,7 @@ export class PublicService {
 
   stopInterval() {
     this.load = false;
-    clearInterval(this.interval);
+    // clearInterval(this.interval);
   }
 
   // sendClick(event: string) {

@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PublicService } from '@app/services/Public/public.service';
-import {
-  faWhatsapp,
-  faFacebook,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -14,18 +9,22 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 })
 export class LandingComponent implements OnInit {
   faBars = faBars;
-  faWhatsapp = faWhatsapp;
-  faFacebook = faFacebook;
-  faInstagram = faInstagram;
 
   constructor(public publicService: PublicService) {}
 
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    setInterval(() => {
-      if (this.publicService.img2Inicio) this.publicService.stopInterval();
-    }, 2000);
+    const animationFrame = () => {
+      if (typeof requestAnimationFrame === 'function')
+        requestAnimationFrame(() => {
+          if (this.publicService.img2Inicio) this.publicService.stopInterval();
+
+          setTimeout(() => animationFrame(), 2000); // Llamada recursiva para continuar la animación
+        });
+    };
+
+    animationFrame(); // Iniciar la animación por primera vez
   }
 
   toogleMenu() {

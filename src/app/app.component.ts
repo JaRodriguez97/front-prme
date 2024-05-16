@@ -1,10 +1,18 @@
+import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
+  Inject,
   OnInit,
+  PLATFORM_ID,
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import {
+  faFacebook,
+  faInstagram,
+  faWhatsapp,
+} from '@fortawesome/free-brands-svg-icons';
 import { PublicService } from '@services/Public/public.service';
 
 @Component({
@@ -14,21 +22,36 @@ import { PublicService } from '@services/Public/public.service';
 })
 export class AppComponent implements OnInit {
   @ViewChild('preload', { static: false }) preload!: ElementRef;
+
+  faWhatsapp = faWhatsapp;
+  faFacebook = faFacebook;
+  faInstagram = faInstagram;
   title = 'front-rpme';
 
   constructor(public publicService: PublicService, private render: Renderer2) {
     this.publicService.load = true;
-    console.log(
-      '🚀 ~ AppComponent ~ constructor ~ this.publicService.load:',
-      this.publicService.load
-    );
   }
 
   ngOnInit(): void {
-    this.publicService.interval = setInterval(() => {
-      let bg = this.publicService.animateBackground();
+    this.initAnimateLoad();
+  }
 
-      this.render.setAttribute(this.preload.nativeElement, 'style', bg);
-    }, 40);
+  initAnimateLoad() {
+    const animationFrame = () => {
+      if (typeof requestAnimationFrame === 'function')
+        requestAnimationFrame(() => {
+          if (!this.preload) return;
+          let bg = this.publicService.animateBackground();
+          console.log('🚀 ~ AppComponent ~ requestAnimationFrame ~ bg:', {
+            bg,
+          });
+
+          this.render.setAttribute(this.preload.nativeElement, 'style', bg);
+
+          setTimeout(() => animationFrame(), 50); // Llamada recursiva para continuar la animación
+        });
+    };
+
+    animationFrame(); // Iniciar la animación por primera vez
   }
 }
