@@ -174,7 +174,7 @@ section > img {
   }
 
   section h1 {
-    bottom: 0;
+    bottom: 40px;
     gap: 20px;
     display: flex;
     flex-direction: column;
@@ -197,8 +197,8 @@ section > img {
   }
 
   section > img {
-    right: 25%;
-    bottom: 50vh;
+    right: 30%;
+    bottom: 60vh;
     border-radius: 0;
     left: auto;
     opacity: 0.5;
