@@ -30,9 +30,9 @@ section h1 strong span {
   position: relative;
   font-style: italic;
   width: 60vw;
-  /* text-shadow: 0px 0px 5px var(--colorPrincipal),
+  text-shadow: 0px 0px 5px var(--colorPrincipal),
     0px 0px 10px var(--colorPrincipal), 0px 0px 20px var(--colorPrincipal),
-    0px 0px 40px var(--colorPrincipal); */
+    0px 0px 40px var(--colorPrincipal);
 }
 
 section > article {
@@ -51,9 +51,9 @@ section > article {
 section > article fa-icon {
   position: absolute;
   width: 50px;
+  height: 50px;
   background: #fff;
   color: var(--colorSecundario);
-  height: 50px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -104,54 +104,6 @@ section > img {
   opacity: 0.7;
   transform: rotateY(180deg);
 }
-/* 
-section > fa-icon {
-  color: var(--colorSecundario);
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  font-size: 4em;
-  right: 10vw;
-  top: 15vh;
-
-  width: 130px;
-  height: 170px;
-  background: var(--backgroundColorPrincipal);
-  border-bottom-left-radius: 30px;
-  z-index: 1;
-}
-
-section > fa-icon::before {
-  content: "";
-  position: absolute;
-
-  width: 120px;
-  height: 150px;
-
-  right: 0;
-  bottom: 10px;
-  background: white;
-  border-radius: 30px;
-  padding: 10px 0;
-  z-index: -1;
-  box-shadow: 0px 0px 5px #fff, 0px 0px 10px #fff, 0px 0px 15px #fff;
-}
-
-section > p {
-  position: absolute;
-  right: 7vw;
-  top: 170px;
-  width: 200px;
-  text-wrap: pretty;
-  text-align: center;
-  z-index: 3;
-  color: black;
-  background: #fff;
-  padding: 5px;
-  border-radius: 10px;
-  box-shadow: var(--boxShadow);
-} */
 
 /* !!! Responsive !!! */
 
@@ -217,11 +169,51 @@ section > p {
 }
 
 @media (max-width: 550px) {
+  section {
+    align-items: end;
+  }
+
   section h1 {
-    bottom: -25vh;
+    bottom: 0;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 11ch;
+    padding: 0;
+    font-size: 7vw;
+  }
+
+  section h1 strong {
+    width: 80vw;
+    font-size: 2.1em;
   }
 
   section > div {
     height: 15vh;
+    bottom: 55vh;
+    left: 5vw;
+    top: auto;
+  }
+
+  section > img {
+    right: 25%;
+    bottom: 50vh;
+    border-radius: 0;
+    left: auto;
+    opacity: 0.5;
+  }
+
+  section > article {
+    bottom: 30vh;
+    left: auto;
+  }
+
+  section > article div {
+    height: 70%;
+  }
+
+  section > article div label {
+    transform-origin: 0 70px;
   }
 }

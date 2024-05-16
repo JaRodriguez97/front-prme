@@ -68,3 +68,10 @@
     color: var(--colorSecundario);
   }
 }
+
+@media (max-width: 550px) {
+  .lineas,
+  .redes {
+    bottom: 25vh;
+  }
+}

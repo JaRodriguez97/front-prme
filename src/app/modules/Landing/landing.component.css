@@ -109,7 +109,7 @@ header.sticky nav ul li a:hover {
 @media (max-width: 768px) {
   header .toggle {
     position: fixed;
-    top: 20vh;
+    top: 15vh;
     left: 0;
     background: #fff;
     width: 50px;
@@ -123,6 +123,7 @@ header.sticky nav ul li a:hover {
     left: 15vw;
     border-radius: 10px;
     border: 1px solid;
+    top: 20vh;
   }
 
   header nav {

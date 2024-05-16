@@ -42,9 +42,6 @@ export class AppComponent implements OnInit {
         requestAnimationFrame(() => {
           if (!this.preload) return;
           let bg = this.publicService.animateBackground();
-          console.log('🚀 ~ AppComponent ~ requestAnimationFrame ~ bg:', {
-            bg,
-          });
 
           this.render.setAttribute(this.preload.nativeElement, 'style', bg);
 

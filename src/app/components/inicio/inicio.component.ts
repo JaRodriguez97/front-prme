@@ -15,11 +15,14 @@ export class InicioComponent implements OnInit {
 
   arrayFrase!: string[];
 
-  constructor(public publicService: PublicService) {
+  constructor(public publicService: PublicService) {}
+
+  ngOnInit(): void {
+    if (this.publicService.isMobile)
+      this.frase = 'Con Nuestra Publicidad + Alcance + Clientes.';
+
     this.arrayFrase = this.frase.split('');
   }
-
-  ngOnInit(): void {}
 
   imagen1cargada() {
     this.publicService.img1Inicio = true;
@@ -30,6 +33,7 @@ export class InicioComponent implements OnInit {
   }
 
   setStyleSpan(i: number) {
-    return `transform: rotate(${i * 6.45}deg)`;
+    let multiplicador = this.publicService.isMobile ? 8 : 6.45;
+    return `transform: rotate(${i * multiplicador}deg)`;
   }
 }
