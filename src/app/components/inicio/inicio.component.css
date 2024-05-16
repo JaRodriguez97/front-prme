@@ -174,8 +174,8 @@ section > img {
   }
 
   section h1 {
-    bottom: 40px;
-    gap: 20px;
+    bottom: 23vh;
+    gap: 8vh;
     display: flex;
     flex-direction: column;
     height: fit-content;
@@ -190,23 +190,24 @@ section > img {
   }
 
   section > div {
-    height: 15vh;
-    bottom: 55vh;
+    height: 20vh;
+    bottom: 1vh;
     left: 5vw;
     top: auto;
+    width: 75vw;
   }
 
   section > img {
-    right: 30%;
-    bottom: 60vh;
+    right: 35%;
+    bottom: 48vh;
     border-radius: 0;
     left: auto;
     opacity: 0.5;
   }
 
   section > article {
-    bottom: 30vh;
-    left: auto;
+    bottom: 67vh;
+    left: 11vw;
   }
 
   section > article div {

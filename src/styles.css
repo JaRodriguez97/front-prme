@@ -89,12 +89,13 @@ section {
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   padding: 15vh 10vw 5vh;
 }
 
 @media (max-width: 550px) {
   section {
+    height: 95vh;
     padding: 15vh 5vw 5vh;
   }
 }
