@@ -1,10 +1,74 @@
+<header [ngClass]="{ sticky: publicService.sticky }">
+  <!-- <header
+  [ngClass]="{ sticky: publicService.sticky }"
+  *ngIf="publicService.img1Inicio"
+> -->
+  <div
+    [ngClass]="{
+      active: publicService.menu,
+      toggle: true,
+      btn: publicService.isMobile
+    }"
+    (click)="toogleMenu()"
+  >
+    <fa-icon [icon]="faBars" aria-hidden="true"></fa-icon>
+  </div>
+
+  <a [routerLink]="'/'" class="logo btn">
+    <img
+      src="../../../assets/icons/RP FONDO TRASPARENTE50.png"
+      alt=""
+      title=""
+      height="50px"
+      width="auto"
+    />
+    <!-- RP-ME -->
+  </a>
+
+  <ul class="social-media">
+    <li>
+      <a href="https://www.facebook.com/" class="btn" target="_blank">
+        <fa-icon [icon]="faFacebook" aria-hidden="true"></fa-icon>
+      </a>
+    </li>
+    <li>
+      <a href="https://instagram.com/" class="btn" target="_blank">
+        <fa-icon [icon]="faInstagram" aria-hidden="true"></fa-icon>
+      </a>
+    </li>
+    <li>
+      <a href="https://wa.link/2866m3" class="btn" target="_blank">
+        <fa-icon [icon]="faWhatsapp" aria-hidden="true"></fa-icon>
+      </a>
+    </li>
+  </ul>
+
+  <nav [ngClass]="{ navbar: true, active: publicService.menu }">
+    <ul [ngClass]="{ menu: true, active: publicService.menu }">
+      <li>
+        <a [routerLink]="'/blog'" (click)="toogleMenu()">Blog</a>
+      </li>
+      <li>
+        <a [routerLink]="'/servicios'" (click)="toogleMenu()">Servicios</a>
+      </li>
+      <li>
+        <a [routerLink]="'/trabajos'" (click)="toogleMenu()">Trabajos</a>
+      </li>
+      <li>
+        <a [routerLink]="'/contacto'" (click)="toogleMenu()">Contáctanos</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 <h2 class="preload" #preload *ngIf="publicService.load">
   Cargando<label>...</label>
 </h2>
+
 <router-outlet></router-outlet>
 
 <!-- botones redes sociales -->
-<ul
+<!-- <ul
   class="redes"
   *ngIf="publicService.img1Inicio"
   [ngClass]="{ active: publicService.menu }"
@@ -24,11 +88,4 @@
       <fa-icon [icon]="faWhatsapp" aria-hidden="true"></fa-icon>
     </a>
   </li>
-</ul>
-
-<!-- lineas punteadas -->
-<ul class="lineas" *ngIf="publicService.img1Inicio">
-  <li></li>
-  <li></li>
-  <li></li>
-</ul>
+</ul> -->

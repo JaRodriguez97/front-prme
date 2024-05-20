@@ -1,44 +1,38 @@
-<header
-  [ngClass]="{ sticky: publicService.sticky }"
-  *ngIf="publicService.img1Inicio"
->
-  <div
-    [ngClass]="{ active: publicService.menuToggle, toggle: true }"
-    (click)="toogleMenu()"
-  ></div>
-  <nav [ngClass]="{ left: true, active: publicService.menu }">
-    <ul [ngClass]="{ menu: true, active: publicService.menu }">
-      <li>
-        <a [routerLink]="'/nosotros'" (click)="toogleMenu()">Nosotros</a>
-      </li>
-      <li>
-        <a [routerLink]="'/servicios'" (click)="toogleMenu()">Servicios</a>
-      </li>
-    </ul>
-  </nav>
+<section class="banner">
+  <main class="slider">
+    <section
+      *ngFor="let s of sections"
+      [ngClass]="{ slide: true, active: s.active }"
+    >
+      <article [ngClass]="{ 'left-info': true }">
+        <div class="penetrate-blur">
+          <h1>{{ s.h1.split(" ")[0] }}</h1>
+        </div>
+        <div class="content">
+          <h3>{{ s.h3 }}</h3>
+          <p>
+            {{ s.p }}
+          </p>
+          <a [routerLink]="'/' + s.page" class="btn">Más Detalles</a>
+        </div>
+      </article>
 
-  <a [routerLink]="'/'" (click)="toogleMenu()" class="logo">
-    <img
-      src="../../../assets/icons/RP FONDO TRASPARENTE50.png"
-      alt=""
-      title=""
-      width="50"
-    />
-  </a>
+      <article [ngClass]="{ 'right-info': true }">
+        <h1>{{ s.h1.split(" ")[1] }}</h1>
+        <h2>{{ s.h2 }}</h2>
+        <!-- <h2>un resultado poético</h2> -->
+      </article>
+    </section>
+  </main>
 
-  <nav [ngClass]="{ rigth: true, active: publicService.menu }">
-    <ul>
-      <li>
-        <a [routerLink]="'/trabajos'" (click)="toogleMenu()">Trabajos</a>
-      </li>
-      <li>
-        <a [routerLink]="'/contacto'" (click)="toogleMenu()">Contáctanos</a>
-      </li>
-    </ul>
-  </nav>
-</header>
+  <div class="navigation">
+    <span class="prev-btn btn" (click)="prevBtn()">
+      <fa-icon [icon]="faChevronLeft" aria-hidden="true"></fa-icon>
+    </span>
+    <span class="next-btn btn" (click)="nextBtn()">
+      <fa-icon [icon]="faChevronRight" aria-hidden="true"></fa-icon>
+    </span>
+  </div>
+</section>
 
 <!-- fin header -->
-
-
-<app-inicio></app-inicio>

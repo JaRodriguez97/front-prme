@@ -1,19 +1,17 @@
-import { isPlatformBrowser } from '@angular/common';
 import {
   Component,
   ElementRef,
-  Inject,
   OnInit,
-  PLATFORM_ID,
   Renderer2,
   ViewChild,
 } from '@angular/core';
+import { PublicService } from '@services/Public/public.service';
 import {
-  faFacebook,
+  faFacebookF,
   faInstagram,
   faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
-import { PublicService } from '@services/Public/public.service';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -23,10 +21,12 @@ import { PublicService } from '@services/Public/public.service';
 export class AppComponent implements OnInit {
   @ViewChild('preload', { static: false }) preload!: ElementRef;
 
-  faWhatsapp = faWhatsapp;
-  faFacebook = faFacebook;
-  faInstagram = faInstagram;
   title = 'front-rpme';
+
+  faBars = faBars;
+  faWhatsapp = faWhatsapp;
+  faFacebook = faFacebookF;
+  faInstagram = faInstagram;
 
   constructor(public publicService: PublicService, private render: Renderer2) {
     this.publicService.load = true;
@@ -37,18 +37,24 @@ export class AppComponent implements OnInit {
   }
 
   initAnimateLoad() {
-    const animationFrame = () => {
-      if (typeof requestAnimationFrame === 'function')
-        requestAnimationFrame(() => {
-          if (!this.preload) return;
-          let bg = this.publicService.animateBackground();
+    if (typeof requestAnimationFrame === 'function')
+      requestAnimationFrame(() => {
+        if (!this.preload) return;
 
-          this.render.setAttribute(this.preload.nativeElement, 'style', bg);
+        let bg = this.publicService.animateBackground();
 
-          setTimeout(() => animationFrame(), 50); // Llamada recursiva para continuar la animación
-        });
-    };
+        this.render.setAttribute(this.preload.nativeElement, 'style', bg);
 
-    animationFrame(); // Iniciar la animación por primera vez
+        setTimeout(() => this.initAnimateLoad(), 60); // Llamada recursiva para continuar la animación
+      });
+  }
+
+  toogleMenu() {
+    this.publicService.servicios = true;
+    this.publicService.trabajos = true;
+    this.publicService.testimonios = true;
+    this.publicService.contactImg = true;
+
+    this.publicService.menu = !this.publicService.menu;
   }
 }
