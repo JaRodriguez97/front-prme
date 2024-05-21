@@ -234,6 +234,10 @@ section .navigation span {
   .slider .slide .left-info .penetrate-blur h1 {
     margin-bottom: 13vh;
   }
+
+  section .navigation {
+    bottom: 10%;
+  }
 }
 
 @media (max-width: 600px) {
