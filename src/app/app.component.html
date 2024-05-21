@@ -3,16 +3,6 @@
   [ngClass]="{ sticky: publicService.sticky }"
   *ngIf="publicService.img1Inicio"
 > -->
-  <div
-    [ngClass]="{
-      active: publicService.menu,
-      toggle: true,
-      btn: publicService.isMobile
-    }"
-    (click)="toogleMenu()"
-  >
-    <fa-icon [icon]="faBars" aria-hidden="true"></fa-icon>
-  </div>
 
   <a [routerLink]="'/'" class="logo btn">
     <img
@@ -59,6 +49,17 @@
       </li>
     </ul>
   </nav>
+
+  <div
+    [ngClass]="{
+      active: publicService.menu,
+      toggle: true,
+      btn: publicService.isMobile
+    }"
+    (click)="toogleMenu()"
+  >
+    <fa-icon [icon]="faBars" aria-hidden="true"></fa-icon>
+  </div>
 </header>
 
 <h2 class="preload" #preload *ngIf="publicService.load">

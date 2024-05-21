@@ -54,7 +54,7 @@ header .social-media li {
 }
 
 header .social-media li a fa-icon {
-  font-size: 20px;
+  font-size: 30px;
   transition: 500ms;
 }
 
@@ -79,6 +79,10 @@ header .navbar ul a {
 /* !!! Responsive !!! */
 
 @media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+
   header .navbar {
     position: fixed;
     background: rgb(255 255 255/20%);
@@ -109,10 +113,14 @@ header .navbar ul a {
     right: 0;
   }
 
+  header .social-media {
+    margin: 0;
+  }
+
   header .toggle {
-    position: fixed;
-    top: 5%;
-    right: 5%;
+    position: relative;
+    /* top: 5%;
+    right: 5%; */
     width: 50px;
     height: 50px;
     z-index: 11;
@@ -121,7 +129,5 @@ header .navbar ul a {
   }
 }
 
-/* 
-@media (max-width: 550px) {
-
-} */
+@media (max-width: 600px) {
+}
