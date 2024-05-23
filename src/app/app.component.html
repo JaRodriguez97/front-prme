@@ -4,7 +4,7 @@
   *ngIf="publicService.img1Inicio"
 > -->
 
-  <a [routerLink]="'/'" class="logo btn">
+  <a [routerLink]="'/'" (click)="toogleMenu()" class="logo btn">
     <img
       src="../../../assets/icons/RP FONDO TRASPARENTE50.png"
       alt=""
@@ -17,17 +17,35 @@
 
   <ul class="social-media">
     <li>
-      <a href="https://www.facebook.com/" class="btn" target="_blank">
+      <a
+        href="https://www.facebook.com/"
+        alt=""
+        title=""
+        class="btn"
+        target="_blank"
+      >
         <fa-icon [icon]="faFacebook" aria-hidden="true"></fa-icon>
       </a>
     </li>
     <li>
-      <a href="https://instagram.com/" class="btn" target="_blank">
+      <a
+        href="https://instagram.com/"
+        alt=""
+        title=""
+        class="btn"
+        target="_blank"
+      >
         <fa-icon [icon]="faInstagram" aria-hidden="true"></fa-icon>
       </a>
     </li>
     <li>
-      <a href="https://wa.link/2866m3" class="btn" target="_blank">
+      <a
+        href="https://wa.link/2866m3"
+        alt=""
+        title=""
+        class="btn"
+        target="_blank"
+      >
         <fa-icon [icon]="faWhatsapp" aria-hidden="true"></fa-icon>
       </a>
     </li>
@@ -42,7 +60,7 @@
         <a [routerLink]="'/servicios'" (click)="toogleMenu()">Servicios</a>
       </li>
       <li>
-        <a [routerLink]="'/trabajos'" (click)="toogleMenu()">Trabajos</a>
+        <a [routerLink]="'/proyectos'" (click)="toogleMenu()">Trabajos</a>
       </li>
       <li>
         <a [routerLink]="'/contacto'" (click)="toogleMenu()">Contáctanos</a>
@@ -63,30 +81,7 @@
 </header>
 
 <h2 class="preload" #preload *ngIf="publicService.load">
-  Cargando<label>...</label>
+  Cargando<label class="letras-color-secundario">...</label>
 </h2>
 
 <router-outlet></router-outlet>
-
-<!-- botones redes sociales -->
-<!-- <ul
-  class="redes"
-  *ngIf="publicService.img1Inicio"
-  [ngClass]="{ active: publicService.menu }"
->
-  <li>
-    <a href="https://www.facebook.com/" target="_blank">
-      <fa-icon [icon]="faFacebook" aria-hidden="true"></fa-icon>
-    </a>
-  </li>
-  <li>
-    <a href="https://instagram.com/" target="_blank">
-      <fa-icon [icon]="faInstagram" aria-hidden="true"></fa-icon>
-    </a>
-  </li>
-  <li>
-    <a href="https://wa.link/2866m3" target="_blank">
-      <fa-icon [icon]="faWhatsapp" aria-hidden="true"></fa-icon>
-    </a>
-  </li>
-</ul> -->

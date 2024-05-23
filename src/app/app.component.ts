@@ -50,11 +50,8 @@ export class AppComponent implements OnInit {
   }
 
   toogleMenu() {
-    this.publicService.servicios = true;
-    this.publicService.trabajos = true;
-    this.publicService.testimonios = true;
-    this.publicService.contactImg = true;
-
+    this.publicService.load = true;
+    this.ngOnInit();
     this.publicService.menu = !this.publicService.menu;
   }
 }

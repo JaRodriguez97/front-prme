@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "c": "ng g c components/contacto --skip-import",
-    "m": "ng g m modules/Landing/Landing -m=app --route Landing --flat",
+    "m": "ng g m modules/Blog/Blog -m=app --route blog --flat",
     "dev": "ng s -o",
     "start": "ng serve",
     "build": "ng build",

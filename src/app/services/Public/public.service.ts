@@ -13,17 +13,7 @@ export class PublicService {
   public isBrowser!: boolean;
   public isMobile!: boolean;
   public sticky!: boolean;
-
-  public img1Inicio!: boolean;
-  public img2Inicio!: boolean;
-
-  public imgNosotros!: boolean;
-  public show!: boolean;
   public menu!: boolean;
-  public contactImg!: boolean;
-  public servicios!: boolean;
-  public trabajos!: boolean;
-  public testimonios!: boolean;
   public load!: boolean;
   public transparentes: Array<string> = Array(15).fill('transparent');
 

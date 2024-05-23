@@ -52,7 +52,7 @@ export class LandingComponent implements OnInit {
       h3: '04. Impacto Transformador',
       p: 'Nuestros Proyectos Realizados son testimonio de nuestro compromiso y eficacia. Cada caso de éxito demuestra cómo nuestras soluciones han generado un impacto transformador para nuestros clientes. Descubre los detalles de estos proyectos y cómo podemos replicar ese éxito en tu negocio.',
       active: false,
-      page: 'trabajos',
+      page: 'proyectos',
     },
     {
       h1: '¡Escríbenos Hoy!',
@@ -69,19 +69,8 @@ export class LandingComponent implements OnInit {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    this.animationFrame(); // Iniciar la animación por primera vez
+    setTimeout(() => this.publicService.stopInterval(), 2000); 
   }
-
-  animationFrame = () => {
-    if (typeof requestAnimationFrame === 'function')
-      requestAnimationFrame(() => {
-        // // if (this.publicService.img2Inicio)
-        // this.publicService.stopInterval();
-
-        setTimeout(() => this.publicService.stopInterval(), 2000); // Llamada recursiva para continuar la animación
-        // setTimeout(() => this.animationFrame(), 2000); // Llamada recursiva para continuar la animación
-      });
-  };
 
   prevBtn() {
     let indexSection = this.sections.findIndex((s) => s.active),
