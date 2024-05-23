@@ -87,7 +87,10 @@ export class PublicService {
 
   stopInterval() {
     this.load = false;
-    // clearInterval(this.interval);
+  }
+
+  loadIsStoped() {
+    return typeof this.load == 'undefined' ? false : !this.load;
   }
 
   // sendClick(event: string) {

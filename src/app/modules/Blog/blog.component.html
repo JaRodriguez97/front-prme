@@ -1,8 +1,11 @@
-<section class="banner" id="banner">
+<section class="banner" id="banner" *ngIf="publicService.loadIsStoped()">
   <header class="content">
     <h2>Nuestro Blog</h2>
     <a class="btn" href="blog#post0">Iniciar Recorrido</a>
-    <span>Última Actualización: <br /> 23/Mayo/2024 4:40pm (-5 GTM)</span>
+    <span
+      >Última Actualización: <br />
+      23/Mayo/2024 4:40pm (-5 GTM)</span
+    >
   </header>
 </section>
 
