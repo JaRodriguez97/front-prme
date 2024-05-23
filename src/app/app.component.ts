@@ -56,6 +56,6 @@ export class AppComponent implements OnInit {
   }
 
   imgLogoLoaded() {
-    this.publicService.imgLogoLoaded = true;
+    setTimeout(() => (this.publicService.imgLogoLoaded = true), 300);
   }
 }
