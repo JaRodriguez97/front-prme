@@ -1,4 +1,4 @@
-<section class="banner">
+<section class="banner" *ngIf="publicService.loadStop || publicService.load">
   <main class="slider">
     <section
       *ngFor="let s of sections"
