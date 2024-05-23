@@ -1,3 +1,7 @@
+<h2 class="preload" #preload *ngIf="publicService.load">
+  Cargando<label class="letras-color-secundario">...</label>
+</h2>
+
 <header [ngClass]="{ sticky: publicService.sticky }">
   <!-- <header
   [ngClass]="{ sticky: publicService.sticky }"
@@ -79,9 +83,5 @@
     <fa-icon [icon]="faBars" aria-hidden="true"></fa-icon>
   </div>
 </header>
-
-<h2 class="preload" #preload *ngIf="publicService.load">
-  Cargando<label class="letras-color-secundario">...</label>
-</h2>
 
 <router-outlet></router-outlet>
