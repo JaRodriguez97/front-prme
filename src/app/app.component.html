@@ -2,7 +2,10 @@
   Cargando<label class="letras-color-secundario">...</label>
 </h2>
 
-<header [ngClass]="{ sticky: publicService.sticky }">
+<header
+  [ngClass]="{ sticky: publicService.sticky }"
+  *ngIf="publicService.loadStop || !publicService.load"
+>
   <!-- <header
   [ngClass]="{ sticky: publicService.sticky }"
   *ngIf="publicService.img1Inicio"
@@ -15,6 +18,7 @@
       title=""
       height="50px"
       width="auto"
+      (load)="imgLogoLoaded()"
     />
     <!-- RP-ME -->
   </a>

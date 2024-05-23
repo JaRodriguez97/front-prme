@@ -54,4 +54,8 @@ export class AppComponent implements OnInit {
     this.ngOnInit();
     this.publicService.menu = !this.publicService.menu;
   }
+
+  imgLogoLoaded() {
+    this.publicService.imgLogoLoaded = true;
+  }
 }

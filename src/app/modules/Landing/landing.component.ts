@@ -66,9 +66,7 @@ export class LandingComponent implements OnInit {
 
   constructor(public publicService: PublicService) {}
 
-  ngOnInit(): void {
-    console.log(this.publicService.loadStop, this.publicService.load);
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit() {
     setTimeout(() => this.publicService.stopInterval(), 2000);
