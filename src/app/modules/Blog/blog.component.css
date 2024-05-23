@@ -38,6 +38,18 @@ section {
   margin-inline: auto;
 }
 
+.banner .content span {
+  position: absolute;
+  bottom: 5vh;
+  left: 5vw;
+  text-align: left;
+  opacity: 0.5;
+}
+
+.banner .content span:hover {
+  opacity: 0.8;
+}
+
 section .post {
   position: relative;
   width: 65vw;

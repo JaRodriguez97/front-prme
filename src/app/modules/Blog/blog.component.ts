@@ -9,57 +9,38 @@ import { PublicService } from '@app/services/Public/public.service';
 export class BlogComponent implements OnInit {
   sections: Array<{
     img: string;
-    hrefP: string;
-    hrefN: string;
     p: string;
     year: number;
     month: string;
     day: number;
   }> = [
     {
-      img: '../../../assets/imagenes/blog/img1.jpg',
-      hrefP: 'blog#banner',
-      hrefN: 'blog#post1',
-      p: ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum ducimus fuga accusamus dolorem. Tenetur voluptatem delectus vel.',
-      year: 2024,
-      month: 'May',
-      day: 22,
-    },
-    {
       img: '../../../assets/imagenes/blog/img2.avif',
-      hrefP: 'blog#post0',
-      hrefN: 'blog#post2',
-      p: ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum ducimus fuga accusamus dolorem. Tenetur voluptatem delectus vel.',
+      p: '4) El marketing digital se ha convertido en una parte integral de cualquier estrategia de marketing. Aprovechar herramientas y canales digitales permite a las empresas alcanzar a su público objetivo de manera más efectiva y medir el impacto de sus campañas en tiempo real.',
       year: 2024,
       month: 'May',
-      day: 22,
+      day: 23,
     },
     {
       img: '../../../assets/imagenes/blog/img3.avif',
-      hrefP: 'blog#post1',
-      hrefN: 'blog#post3',
-      p: ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum ducimus fuga accusamus dolorem. Tenetur voluptatem delectus vel.',
+      p: '3) Una propuesta de valor clara y convincente es crucial para atraer y retener clientes. Esta debe destacar cómo los productos o servicios de una empresa satisfacen mejor las necesidades del cliente en comparación con la competencia.',
       year: 2024,
       month: 'May',
       day: 22,
     },
     {
-      img: '../../../assets/imagenes/blog/img4.avif',
-      hrefP: 'blog#post2',
-      hrefN: 'blog#post4',
-      p: ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum ducimus fuga accusamus dolorem. Tenetur voluptatem delectus vel.',
+      img: '../../../assets/imagenes/blog/img2.jpg',
+      p: '2) Segmentar el mercado en grupos de clientes con características y necesidades similares es esencial para desarrollar estrategias de marketing efectivas. Esta práctica permite personalizar mensajes y ofertas, mejorando la eficacia y el retorno de inversión.',
       year: 2024,
       month: 'May',
-      day: 22,
+      day: 21,
     },
     {
-      img: '../../../assets/imagenes/blog/img5.avif',
-      hrefP: 'blog#post3',
-      hrefN: 'blog#banner',
-      p: ' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum ducimus fuga accusamus dolorem. Tenetur voluptatem delectus vel.',
+      img: '../../../assets/imagenes/blog/img1.jpg',
+      p: '1) El análisis de mercado es fundamental para cualquier estrategia de marketing. Permite a las empresas comprender las dinámicas del mercado, identificar oportunidades y amenazas, y tomar decisiones informadas sobre cómo posicionarse para el éxito.',
       year: 2024,
       month: 'May',
-      day: 22,
+      day: 20,
     },
   ];
   constructor(public publicService: PublicService) {}
