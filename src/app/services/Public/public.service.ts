@@ -15,6 +15,7 @@ export class PublicService {
   public sticky!: boolean;
   public menu!: boolean;
   public load!: boolean;
+  public loadStop!: boolean;
   public transparentes: Array<string> = Array(15).fill('transparent');
 
   constructor(
@@ -87,10 +88,7 @@ export class PublicService {
 
   stopInterval() {
     this.load = false;
-  }
-
-  loadIsStoped() {
-    return typeof this.load == 'undefined' ? false : !this.load;
+    this.loadStop = true;
   }
 
   // sendClick(event: string) {
