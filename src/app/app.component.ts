@@ -28,11 +28,10 @@ export class AppComponent implements OnInit {
   faFacebook = faFacebookF;
   faInstagram = faInstagram;
 
-  constructor(public publicService: PublicService, private render: Renderer2) {
-    this.publicService.load = true;
-  }
+  constructor(public publicService: PublicService, private render: Renderer2) {}
 
   ngOnInit(): void {
+    this.publicService.load = true;
     this.initAnimateLoad();
   }
 
