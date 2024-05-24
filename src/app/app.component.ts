@@ -28,10 +28,11 @@ export class AppComponent implements OnInit {
   faFacebook = faFacebookF;
   faInstagram = faInstagram;
 
-  constructor(public publicService: PublicService, private render: Renderer2) {}
+  constructor(public publicService: PublicService, private render: Renderer2) {
+    this.publicService.load = true;
+  }
 
   ngOnInit(): void {
-    this.publicService.load = true;
     this.initAnimateLoad();
   }
 
@@ -44,14 +45,19 @@ export class AppComponent implements OnInit {
 
         this.render.setAttribute(this.preload.nativeElement, 'style', bg);
 
+        this.publicService.headerLoad = true;
+
         setTimeout(() => this.initAnimateLoad(), 60); // Llamada recursiva para continuar la animación
       });
   }
 
-  toogleMenu() {
-    this.publicService.load = true;
-    this.ngOnInit();
+  toogleMenu(i: boolean = true) {
     this.publicService.menu = !this.publicService.menu;
+
+    if (i) {
+      this.publicService.load = true;
+      this.ngOnInit();
+    }
   }
 
   imgLogoLoaded() {

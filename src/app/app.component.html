@@ -4,7 +4,7 @@
 
 <header
   [ngClass]="{ sticky: publicService.sticky }"
-  *ngIf="publicService.loadStop || publicService.load"
+  *ngIf="publicService.headerLoad"
 >
   <!-- <header
   [ngClass]="{ sticky: publicService.sticky }"
@@ -82,7 +82,7 @@
       toggle: true,
       btn: publicService.isMobile
     }"
-    (click)="toogleMenu()"
+    (click)="toogleMenu(false)"
   >
     <fa-icon [icon]="faBars" aria-hidden="true"></fa-icon>
   </div>

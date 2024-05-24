@@ -17,6 +17,7 @@ export class PublicService {
   public load!: boolean;
   public loadStop!: boolean;
   public imgLogoLoaded!: boolean;
+  public headerLoad!: boolean;
   public transparentes: Array<string> = Array(15).fill('transparent');
 
   constructor(
