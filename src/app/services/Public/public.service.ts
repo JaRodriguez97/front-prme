@@ -10,8 +10,9 @@ export class PublicService {
   // URL = environment.urlBack + 'contact/';
 
   // public interval!: any;
-  public isBrowser!: boolean;
-  public isMobile!: boolean;
+  readonly isBrowser!: boolean;
+  readonly isMobile!: boolean;
+  
   public sticky!: boolean;
   public menu!: boolean;
   public load: boolean = true;
