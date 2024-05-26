@@ -1,17 +1,11 @@
-import {
-  Component,
-  ElementRef,
-  OnInit,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
-import { PublicService } from '@services/Public/public.service';
+import { Component, OnInit } from '@angular/core';
 import {
   faFacebookF,
   faInstagram,
   faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { PublicService } from '@services/Public/public.service';
 
 @Component({
   selector: 'app-root',
@@ -26,8 +20,9 @@ export class AppComponent implements OnInit {
   faFacebook = faFacebookF;
   faInstagram = faInstagram;
 
-  constructor(public publicService: PublicService, private render: Renderer2) {
+  constructor(public publicService: PublicService) {
     this.publicService.load = true;
+    this.publicService.headerLoad = false;
   }
 
   ngOnInit(): void {}

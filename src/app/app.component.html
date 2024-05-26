@@ -8,7 +8,7 @@
 
 <header
   [ngClass]="{ sticky: publicService.sticky }"
-  *ngIf="publicService.headerLoad || false"
+  *ngIf="publicService.headerLoad"
 >
   <a [routerLink]="'/'" (click)="toogleMenu()" class="logo btn">
     <img
