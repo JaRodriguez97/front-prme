@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
 
     if (i) {
       this.publicService.load = true;
-      this.ngOnInit();
     }
   }
 

@@ -14,10 +14,10 @@ export class PublicService {
   public isMobile!: boolean;
   public sticky!: boolean;
   public menu!: boolean;
-  public load!: boolean;
+  public load: boolean = true;
   public loadStop!: boolean;
   public imgLogoLoaded!: boolean;
-  public headerLoad!: boolean;
+  public headerLoad: boolean = false;
   public medium_load!: boolean;
   public finish_load!: boolean;
   public transparentes: Array<string> = Array(15).fill('transparent');
@@ -56,7 +56,6 @@ export class PublicService {
       'Content-Type': 'application/json',
     });
   }
-
 
   // sendClick(event: string) {
   //   let headers = this.headers();
