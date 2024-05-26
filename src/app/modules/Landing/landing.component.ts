@@ -70,11 +70,12 @@ export class LandingComponent implements OnInit {
 
   ngAfterViewInit() {
     setTimeout(() => {
-      // this.publicService.headerLoad = true;
-
       this.publicService.medium_load = true;
 
-      setTimeout(() => (this.publicService.load = false), 2200);
+      setTimeout(() => {
+        this.publicService.headerLoad = true;
+        this.publicService.load = false;
+      }, 2200);
     }, 1000);
   }
 
