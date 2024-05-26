@@ -19,8 +19,6 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  @ViewChild('preload', { static: false }) preload!: ElementRef;
-
   title = 'front-rpme';
 
   faBars = faBars;
@@ -29,7 +27,7 @@ export class AppComponent implements OnInit {
   faInstagram = faInstagram;
 
   constructor(public publicService: PublicService, private render: Renderer2) {
-    this.publicService.load = true;
+    this.publicService.headerLoad = true;
   }
 
   ngOnInit(): void {}
