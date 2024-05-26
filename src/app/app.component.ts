@@ -33,23 +33,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.initAnimateLoad();
   }
 
-  initAnimateLoad() {
-    if (typeof requestAnimationFrame === 'function')
-      requestAnimationFrame(() => {
-        if (!this.preload) return;
-
-        let bg = this.publicService.animateBackground();
-
-        this.render.setAttribute(this.preload.nativeElement, 'style', bg);
-
-        this.publicService.headerLoad = true;
-
-        setTimeout(() => this.initAnimateLoad(), 60); // Llamada recursiva para continuar la animación
-      });
-  }
 
   toogleMenu(i: boolean = true) {
     this.publicService.menu = !this.publicService.menu;

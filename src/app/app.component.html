@@ -1,6 +1,16 @@
-<h2 class="preload" #preload *ngIf="publicService.load">
+<!-- <h2 class="preload" #preload *ngIf="publicService.load">
   Cargando<label class="letras-color-secundario">...</label>
-</h2>
+</h2> -->
+
+<section class="preload" #preload *ngIf="publicService.load">
+  <label
+    [ngClass]="{
+      'letras-color-secundario': true,
+      'medium-load': publicService.medium_load,
+      'finish-load': publicService.finish_load
+    }"
+  ></label>
+</section>
 
 <header
   [ngClass]="{ sticky: publicService.sticky }"

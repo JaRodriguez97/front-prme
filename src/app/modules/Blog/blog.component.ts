@@ -48,6 +48,6 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    setTimeout(() => this.publicService.stopInterval(), 2000);
+    // setTimeout(() => this.publicService.stopInterval(), 2000);
   }
 }

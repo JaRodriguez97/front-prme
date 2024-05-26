@@ -18,6 +18,8 @@ export class PublicService {
   public loadStop!: boolean;
   public imgLogoLoaded!: boolean;
   public headerLoad!: boolean;
+  public medium_load!: boolean;
+  public finish_load!: boolean;
   public transparentes: Array<string> = Array(15).fill('transparent');
 
   constructor(
@@ -55,43 +57,6 @@ export class PublicService {
     });
   }
 
-  animateBackground() {
-    let blanco = '#fff5',
-      indexHexa: number,
-      i = 0;
-
-    i++;
-    indexHexa = this.transparentes.findIndex((elemento) =>
-      elemento.startsWith('#')
-    );
-    if (
-      indexHexa == this.transparentes.length ||
-      indexHexa == this.transparentes.length - 1
-    ) {
-      this.transparentes[indexHexa] = 'transparent';
-      i = 1;
-      indexHexa = 0;
-    }
-    if (i % 2 == 0) {
-      this.transparentes[indexHexa] = '#fff4';
-      this.transparentes[indexHexa + 1] = '#fff4';
-    } else {
-      if (indexHexa == -1) this.transparentes.unshift(blanco);
-      else {
-        this.transparentes[indexHexa] = 'transparent';
-        this.transparentes[indexHexa + 1] = blanco;
-      }
-    }
-
-    return `background-image: var(--backgroundLoad), radial-gradient(
-      ${this.transparentes.join(',')}
-    );`;
-  }
-
-  stopInterval() {
-    this.load = false;
-    this.loadStop = true;
-  }
 
   // sendClick(event: string) {
   //   let headers = this.headers();

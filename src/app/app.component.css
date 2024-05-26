@@ -14,6 +14,31 @@
   font-size: 3em;
 }
 
+.preload label {
+  position: relative;
+  height: 20px;
+  border-radius: 10px;
+  width: 50vw;
+  background: #fff;
+  box-shadow: var(--boxShadowGradient);
+  padding: 2px;
+}
+
+.preload label::after {
+  content: "";
+  position: relative;
+  height: 16px;
+  width: 30px;
+  background: var(--colorPrincipal);
+  border-radius: 10px;
+  display: flex;
+}
+
+.preload label.medium-load::after {
+  transition: width 2s;
+  width: calc(50vw - 4px);
+}
+
 header {
   position: fixed;
   top: 0;
