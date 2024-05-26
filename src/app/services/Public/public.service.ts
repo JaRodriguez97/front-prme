@@ -12,7 +12,7 @@ export class PublicService {
   // public interval!: any;
   readonly isBrowser!: boolean;
   readonly isMobile!: boolean;
-  
+
   public sticky!: boolean;
   public menu!: boolean;
   public load: boolean = true;
@@ -28,6 +28,7 @@ export class PublicService {
     private http: HttpClient
   ) {
     // Verifica si la aplicación se está ejecutando en un navegador
+    this.headerLoad = false;
     this.isBrowser = isPlatformBrowser(this.platformId);
 
     if (this.isBrowser) {

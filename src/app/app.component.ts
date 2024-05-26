@@ -25,9 +25,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.publicService.headerLoad = false;
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.publicService.headerLoad = false;
+  }
 
   ngAfterViewInit() {
+    this.publicService.headerLoad = false;
     setTimeout(() => {
       this.publicService.medium_load = true;
       this.publicService.headerLoad = true;
@@ -41,9 +44,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   toogleMenu(i: boolean = true) {
     this.publicService.menu = !this.publicService.menu;
 
-    if (i) {
-      this.publicService.load = true;
-    }
+    // if (i) {
+    //   this.publicService.load = true;
+    // }
   }
 
   imgLogoLoaded() {
