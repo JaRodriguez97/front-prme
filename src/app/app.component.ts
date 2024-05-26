@@ -32,9 +32,7 @@ export class AppComponent implements OnInit {
     this.publicService.load = true;
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 
   toogleMenu(i: boolean = true) {
     this.publicService.menu = !this.publicService.menu;
@@ -46,6 +44,6 @@ export class AppComponent implements OnInit {
   }
 
   imgLogoLoaded() {
-    setTimeout(() => (this.publicService.imgLogoLoaded = true), 300);
+    this.publicService.imgLogoLoaded = true;
   }
 }
