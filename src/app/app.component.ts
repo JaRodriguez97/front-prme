@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   faInstagram = faInstagram;
 
   constructor(public publicService: PublicService, private render: Renderer2) {
-    this.publicService.headerLoad = true;
+    this.publicService.load = true;
   }
 
   ngOnInit(): void {}
