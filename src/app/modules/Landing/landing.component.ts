@@ -66,16 +66,7 @@ export class LandingComponent implements OnInit {
 
   constructor(public publicService: PublicService) {}
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.publicService.medium_load = true;
-      this.publicService.headerLoad = true;
-
-      setTimeout(() => {
-        this.publicService.load = false;
-      }, 2200);
-    }, 1000);
-  }
+  ngOnInit(): void {}
 
   prevBtn() {
     let indexSection = this.sections.findIndex((s) => s.active),

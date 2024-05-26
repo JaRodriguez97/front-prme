@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {
   faFacebookF,
   faInstagram,
@@ -12,7 +12,7 @@ import { PublicService } from '@services/Public/public.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'front-rpme';
 
   faBars = faBars;
@@ -26,6 +26,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.publicService.medium_load = true;
+      this.publicService.headerLoad = true;
+
+      setTimeout(() => {
+        this.publicService.load = false;
+      }, 2200);
+    }, 1000);
+  }
 
   toogleMenu(i: boolean = true) {
     this.publicService.menu = !this.publicService.menu;
