@@ -75,7 +75,7 @@ export class LandingComponent implements OnInit {
       this.publicService.medium_load = true;
 
       setTimeout(() => (this.publicService.load = false), 2200);
-    }, 1000);
+    }, 10000);
   }
 
   prevBtn() {
