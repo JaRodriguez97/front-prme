@@ -65,7 +65,6 @@ export class LandingComponent implements OnInit {
   ];
 
   constructor(public publicService: PublicService) {
-    this.publicService.headerLoad = false;
   }
 
   ngOnInit(): void {}

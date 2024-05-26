@@ -1,7 +1,6 @@
 <section class="preload" *ngIf="publicService.load">
   <label
     [ngClass]="{
-      'letras-color-secundario': true,
       'medium-load': publicService.medium_load
     }"
   ></label>
@@ -9,7 +8,7 @@
 
 <header
   [ngClass]="{ sticky: publicService.sticky }"
-  *ngIf="publicService.headerLoad"
+  *ngIf="publicService.headerLoad || false"
 >
   <a [routerLink]="'/'" (click)="toogleMenu()" class="logo btn">
     <img
