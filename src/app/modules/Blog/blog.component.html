@@ -1,4 +1,4 @@
-<section class="banner" id="banner">
+<section class="banner" id="banner" *ngIf="publicService.imgLogoLoaded">
   <header class="content">
     <h2>Nuestro Blog</h2>
     <a class="btn" href="blog#post0">Iniciar Recorrido</a>
@@ -14,7 +14,7 @@
   class="blog-post banner"
   [id]="'post' + i"
 >
-  <article class="post">
+  <article class="post" *ngIf="publicService.imgLogoLoaded">
     <img [src]="s.img" alt="" width="100%" height="100%" />
 
     <a [href]="i == 0 ? 'blog#banner' : 'blog#post' + (i - 1)" class="btn prev">
