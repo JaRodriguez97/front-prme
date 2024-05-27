@@ -41,12 +41,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     }, 1000);
   }
 
-  toogleMenu(i: boolean = true) {
+  toogleMenu() {
     this.publicService.menu = !this.publicService.menu;
-
-    // if (i) {
-    //   this.publicService.load = true;
-    // }
   }
 
   imgLogoLoaded() {

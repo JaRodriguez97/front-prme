@@ -89,8 +89,8 @@ section .post .btn.prev {
 }
 
 section .post .btn.next {
-  bottom: 50px;
-  right: -80px;
+  bottom: 40%;
+  right: -50px;
 }
 
 section .post .post-title {
@@ -102,7 +102,7 @@ section .post .post-title {
   font-size: 20px;
   padding: 15px;
   line-height: 25px;
-  width: calc(100% - 10vw);
+  width: calc(100% - 10px);
   box-sizing: border-box;
 }
 
@@ -135,8 +135,47 @@ section .post .post-date span:nth-child(3) {
   line-height: 20px;
 }
 
+@media (max-width: 768px) {
+  section .post {
+    height: 60svh;
+    margin-top: 5vh;
+    width: 90vw;
+  }
+  section .post .btn.prev {
+    top: 65vh;
+    left: 0px;
+  }
 
-@media (max-width: 500px) {
-  
+  section .post .btn.next {
+    bottom: -13vh;
+    right: 0;
+  }
+}
 
+@media (max-width: 550px) {
+  .banner .content h2 {
+    font-size: 20vw;
+  }
+
+  .banner .content a {
+    font-size: 5vw;
+  }
+
+  section .post {
+    margin: 0;
+    height: 65svh;
+  }
+
+  section .post .btn {
+    font-size: 18px;
+  }
+
+  section .post .btn.prev {
+    top: auto;
+    bottom: -13vh;
+  }
+
+  section .post .btn.next {
+    bottom: -13vh;
+  }
 }
