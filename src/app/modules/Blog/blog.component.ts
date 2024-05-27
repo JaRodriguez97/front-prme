@@ -16,6 +16,13 @@ export class BlogComponent implements OnInit {
   }> = [
     {
       img: '../../../assets/imagenes/blog/img2.avif',
+      p: '8) ',
+      year: 2024,
+      month: 'May',
+      day: 27,
+    },
+    {
+      img: '../../../assets/imagenes/blog/img2.avif',
       p: '7) El análisis de datos permite a las empresas tomar decisiones informadas, identificar tendencias y medir el rendimiento de sus campañas. Descubre cómo el uso de datos puede optimizar tus estrategias de marketing y maximizar el retorno de inversión.',
       year: 2024,
       month: 'May',
