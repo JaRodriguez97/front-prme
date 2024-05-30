@@ -43,12 +43,19 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: calc(100vw - 8px);
   padding: 30px 5%;
   background: transparent;
   display: flex;
   align-items: center;
   z-index: 9;
+  transition: 500ms;
+}
+
+header.sticky {
+  backdrop-filter: blur(10px);
+  padding: 20px 5%;
+  box-shadow: 0 0 20px rgb(255 255 255/20%);
 }
 
 header .toggle {
@@ -106,6 +113,7 @@ header .navbar ul a {
 @media (max-width: 768px) {
   header {
     justify-content: space-between;
+    width: 100vw;
   }
 
   header .navbar {
