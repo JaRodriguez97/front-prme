@@ -111,7 +111,7 @@ article:nth-child(even) .container .content {
   }
 
   article {
-    padding: 30vh;
+    padding-top: 30vh;
   }
 
   article .container {
