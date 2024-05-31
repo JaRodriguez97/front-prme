@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
 import {
   faFacebookF,
   faInstagram,
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       setTimeout(() => {
         this.publicService.load = false;
       }, 2200);
-    }, 1000);
+    }, 500);
   }
 
   toogleMenu() {

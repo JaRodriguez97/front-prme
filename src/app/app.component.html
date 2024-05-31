@@ -10,12 +10,12 @@
   [ngClass]="{ sticky: publicService.sticky }"
   *ngIf="publicService.headerLoad"
 >
-  <a [routerLink]="'/'" class="logo btn">
+  <a href="/" class="logo btn">
     <img
       src="../../../assets/icons/RP FONDO TRASPARENTE50.png"
       alt=""
       title=""
-      height="50px"
+      height="50"
       width="auto"
       (load)="imgLogoLoaded()"
     />

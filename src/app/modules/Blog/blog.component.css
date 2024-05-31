@@ -5,6 +5,7 @@
   text-transform: uppercase;
   color: #000;
   background: #fff;
+  transition: 300ms;
 }
 
 .btn:hover {

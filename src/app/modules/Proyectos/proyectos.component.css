@@ -73,6 +73,9 @@ article .container .imgBx {
   height: 400px;
   overflow: hidden;
   box-shadow: 0 25px 35px rgb(0 0 0 / 10%);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-attachment: fixed;
 }
 
 article .container .imgBx img {
@@ -87,7 +90,7 @@ article .container .imgBx img {
 article .container .content {
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 0;
   /* margin: 200px 0 40px 0; */
   padding: 40px;
   background: #333;
@@ -100,4 +103,22 @@ article .container .content {
 
 article:nth-child(even) .container .content {
   left: 0;
+}
+
+@media (max-width: 1024px) {
+  section::before {
+    font-size: 20vw;
+  }
+
+  article {
+    padding: 30vh;
+  }
+
+  article .container {
+    width: 90vw;
+  }
+
+  article h2 {
+    font-size: 8vw;
+  }
 }

@@ -53,9 +53,10 @@ header {
 }
 
 header.sticky {
-  backdrop-filter: blur(10px);
+  background: #02c4fa20;
+  backdrop-filter: blur(30px);
   padding: 20px 5%;
-  box-shadow: 0 0 20px rgb(255 255 255/20%);
+  box-shadow: 0 0 20px rgb(255 255 255/50%);
 }
 
 header .toggle {
