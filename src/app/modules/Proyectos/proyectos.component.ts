@@ -71,9 +71,21 @@ export class ProyectosComponent implements OnInit, OnDestroy {
     ) as NodeListOf<HTMLElement>;
 
     h2Element.forEach((h, i) => {
-      if (h) {
-        if (i % 2 == 0) h.style.marginLeft = `${num - scrollPos / (i + 1)}px`;
-        else h.style.marginRight = `${num - scrollPos / (i + 1)}px`;
+      let multIN =
+        i *
+        (innerHeight -
+          (innerHeight * (this.publicService.isMobile ? 50 : 60)) / 100);
+      let multOUT = i + 1;
+
+      if (h && scrollPos > multIN && scrollPos < multOUT * innerHeight) {
+        if (i % 2 == 0)
+          h.style.marginLeft = `${
+            num - scrollPos / (i + 1) / (this.publicService.isMobile ? 2 : 1)
+          }px`;
+        else
+          h.style.marginRight = `${
+            num - scrollPos / (i + 1) / (this.publicService.isMobile ? 2 : 1)
+          }px`;
       }
     });
 
