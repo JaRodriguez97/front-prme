@@ -42,7 +42,10 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   toogleMenu() {
-    this.publicService.menu = !this.publicService.menu;
+    if (this.publicService.sticky)
+      this.publicService.sticky = !this.publicService.sticky;
+
+    setTimeout(() => (this.publicService.menu = !this.publicService.menu), 300);
   }
 
   imgLogoLoaded() {
