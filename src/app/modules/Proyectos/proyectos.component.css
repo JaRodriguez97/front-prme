@@ -110,9 +110,9 @@ article:nth-child(even) .container .content {
     font-size: 20vw;
   }
 
-  article {
+  /* article {
     padding-top: 30vh;
-  }
+  } */
 
   article .container {
     width: 90vw;
@@ -120,5 +120,11 @@ article:nth-child(even) .container .content {
 
   article h2 {
     font-size: 8vw;
+  }
+}
+
+@media (max-width: 500px) {
+  section {
+    padding: 35vh 0;
   }
 }

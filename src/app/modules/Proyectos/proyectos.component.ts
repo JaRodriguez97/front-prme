@@ -76,16 +76,15 @@ export class ProyectosComponent implements OnInit, OnDestroy {
         (innerHeight -
           (innerHeight * (this.publicService.isMobile ? 50 : 60)) / 100);
       let multOUT = i + 1;
+      let margin =
+        num -
+        (scrollPos - innerHeight * (i/10)) /
+          (i + 1) /
+          (this.publicService.isMobile ? 2 : 1);
 
       if (h && scrollPos > multIN && scrollPos < multOUT * innerHeight) {
-        if (i % 2 == 0)
-          h.style.marginLeft = `${
-            num - scrollPos / (i + 1) / (this.publicService.isMobile ? 2 : 1)
-          }px`;
-        else
-          h.style.marginRight = `${
-            num - scrollPos / (i + 1) / (this.publicService.isMobile ? 2 : 1)
-          }px`;
+        if (i % 2 == 0) h.style.marginLeft = `${margin}px`;
+        else h.style.marginRight = `${margin}px`;
       }
     });
 
