@@ -62,7 +62,8 @@ body {
   background-color: var(--backgroundColorSecundario);
 }
 
-a {
+a,
+.circle {
   -webkit-tap-highlight-color: transparent; /* Para navegadores basados en WebKit (como Safari y Chrome) */
   -webkit-touch-callout: none; /* Evita que se muestre el menú de selección en dispositivos iOS */
   -webkit-user-select: none; /* Evita la selección de texto en dispositivos iOS */

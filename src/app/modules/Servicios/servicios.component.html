@@ -1,0 +1,14 @@
+<section id="lab">
+  <div class="circle" (click)="roundParticles()"></div>
+  <svg>
+    <filter id="gooey">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+      <feColorMatrix
+        values="1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                0 0 0 50 -10"
+      />
+    </filter>
+  </svg>
+</section>

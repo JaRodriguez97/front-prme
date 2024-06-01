@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 import { PublicService } from '@app/services/Public/public.service';
 @Component({
   selector: 'app-proyectos',
@@ -44,10 +45,13 @@ export class ProyectosComponent implements OnInit, OnDestroy {
   ];
   private sectionElement: HTMLElement | null = null;
 
-  constructor(public publicService: PublicService) {}
+  constructor(
+    public publicService: PublicService,
+    @Inject(DOCUMENT) private document: Document
+  ) {}
 
   ngOnInit(): void {
-    this.sectionElement = document.querySelector('.section');
+    this.sectionElement = this.document.querySelector('.section');
     this.sectionElement?.addEventListener('scroll', this.onSectionScroll);
   }
 
@@ -78,7 +82,7 @@ export class ProyectosComponent implements OnInit, OnDestroy {
       let multOUT = i + 1;
       let margin =
         num -
-        (scrollPos - innerHeight * (i/10)) /
+        (scrollPos - innerHeight * (i / 10)) /
           (i + 1) /
           (this.publicService.isMobile ? 2 : 1);
 
