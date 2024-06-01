@@ -9,6 +9,91 @@ import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
 })
 export class ServiciosComponent implements OnInit, OnDestroy {
   private animationFrameId: number | null = null;
+  public servicios: Array<{
+    src: string;
+    alt: string;
+    title: string;
+    titulo: string;
+    parrafo: string;
+  }> = [
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+    {
+      src: 'string',
+      alt: 'string',
+      title: 'string',
+      titulo: 'string',
+      parrafo: 'string',
+    },
+  ];
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -16,14 +101,32 @@ export class ServiciosComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.roundParticles();
+
+    this.delayAnimation();
+
+    this.detectScroll();
+  }
+
+  delayAnimation() {
     if (this.publicService.isBrowser) {
       this.animationFrameId = requestAnimationFrame(() => {
         setTimeout(() => {
           this.roundParticles();
-          this.ngOnInit();
-        }, 5000);
+          this.delayAnimation();
+        }, 10000);
       });
     }
+  }
+
+  detectScroll() {
+    let services = this.document.querySelector('.services');
+
+    services?.addEventListener('scroll', () => {
+      let scrollPos = services?.scrollTop!;
+
+      this.publicService.sticky = scrollPos > 50;
+    });
   }
 
   ngOnDestroy(): void {
@@ -41,7 +144,7 @@ export class ServiciosComponent implements OnInit, OnDestroy {
 
       let randomSize = Math.random() * 60 + 10;
 
-      let duration = Math.random() * 3 + 2;
+      let duration = Math.random() * 10 + 5;
 
       let deg = Math.random() * 360 + 1;
 
@@ -59,7 +162,7 @@ export class ServiciosComponent implements OnInit, OnDestroy {
 
       section!.appendChild(particles);
 
-      setTimeout(() => particles.remove(), 5000);
+      setTimeout(() => particles.remove(), 11000);
     }
   }
 }

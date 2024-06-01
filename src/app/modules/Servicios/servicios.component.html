@@ -12,3 +12,30 @@
     </filter>
   </svg>
 </section>
+
+<section class="services">
+  <!-- <section class="services" *ngIf="publicService.servicios"> -->
+  <div class="title">
+    <h2>Abanico de Soluciones</h2>
+    <p>
+      Ofrecemos servicios integrales, desde publicidad digital y SEO hasta
+      gestión de redes sociales, análisis de mercado y publicidad física, para
+      atraer más clientes y aumentar tu visibilidad.
+    </p>
+  </div>
+
+  <ul>
+    <li *ngFor="let s of servicios">
+      <img
+        [src]="s.src"
+        [alt]="s.alt"
+        [title]="s.title"
+        loading="lazy"
+        width="340"
+        height="200"
+      />
+      <h3>{{ s.titulo }}</h3>
+      <p [innerHTML]="s.parrafo"></p>
+    </li>
+  </ul>
+</section>
