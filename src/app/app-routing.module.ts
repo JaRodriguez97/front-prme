@@ -17,8 +17,27 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/Blog/blog.module').then((m) => m.BlogModule),
   },
-  { path: 'proyectos', loadChildren: () => import('./modules/Proyectos/proyectos.module').then(m => m.ProyectosModule) },
-  { path: 'servicios', loadChildren: () => import('./modules/Servicios/servicios.module').then(m => m.ServiciosModule) },
+  {
+    path: 'proyectos',
+    loadChildren: () =>
+      import('./modules/Proyectos/proyectos.module').then(
+        (m) => m.ProyectosModule
+      ),
+  },
+  {
+    path: 'servicios',
+    loadChildren: () =>
+      import('./modules/Servicios/servicios.module').then(
+        (m) => m.ServiciosModule
+      ),
+  },
+  {
+    path: 'contacto',
+    loadChildren: () =>
+      import('./modules/Contacto/contacto.module').then(
+        (m) => m.ContactoModule
+      ),
+  },
 ];
 
 @NgModule({

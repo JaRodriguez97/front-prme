@@ -3,6 +3,7 @@ import {
   faFacebookF,
   faInstagram,
   faWhatsapp,
+  faTiktok,
 } from '@fortawesome/free-brands-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { PublicService } from '@services/Public/public.service';
@@ -19,6 +20,34 @@ export class AppComponent implements OnInit, AfterViewInit {
   faWhatsapp = faWhatsapp;
   faFacebook = faFacebookF;
   faInstagram = faInstagram;
+  faTiktok = faTiktok;
+
+  socialMedia: Array<{
+    href: string;
+    title: string;
+    icon: typeof faTiktok;
+  }> = [
+    {
+      href: 'https://www.facebook.com/',
+      title: '',
+      icon: faFacebookF,
+    },
+    {
+      href: 'https://www.instagram.com/rp_marketingestrategico',
+      title: 'string',
+      icon: faInstagram,
+    },
+    {
+      href: 'https://www.tiktok.com/@rp_marketingestrategico',
+      title: 'string',
+      icon: faTiktok,
+    },
+    {
+      href: 'https://wa.me/573243973949',
+      title: 'string',
+      icon: faWhatsapp,
+    },
+  ];
 
   constructor(public publicService: PublicService) {
     this.publicService.load = true;

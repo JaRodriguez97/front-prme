@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "c": "ng g c components/contacto --skip-import",
-    "m": "ng g m modules/Servicios/Servicios -m=app --route servicios --flat",
+    "m": "ng g m modules/Contacto/Contacto -m=app --route contacto --flat",
     "dev": "ng s -o",
     "start": "ng serve",
     "build": "ng build",

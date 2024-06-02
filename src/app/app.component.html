@@ -23,37 +23,9 @@
   </a>
 
   <ul class="social-media">
-    <li>
-      <a
-        href="https://www.facebook.com/"
-        alt=""
-        title=""
-        class="btn"
-        target="_blank"
-      >
-        <fa-icon [icon]="faFacebook" aria-hidden="true"></fa-icon>
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://instagram.com/"
-        alt=""
-        title=""
-        class="btn"
-        target="_blank"
-      >
-        <fa-icon [icon]="faInstagram" aria-hidden="true"></fa-icon>
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://wa.link/2866m3"
-        alt=""
-        title=""
-        class="btn"
-        target="_blank"
-      >
-        <fa-icon [icon]="faWhatsapp" aria-hidden="true"></fa-icon>
+    <li *ngFor="let sm of socialMedia">
+      <a [href]="sm.href" [title]="sm.title" class="btn" target="_blank">
+        <fa-icon [icon]="sm.icon" aria-hidden="true"></fa-icon>
       </a>
     </li>
   </ul>
