@@ -28,7 +28,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     icon: typeof faTiktok;
   }> = [
     {
-      href: 'https://www.facebook.com/',
+      href: 'https://www.facebook.com/people/RPMarketing/61557607667701',
       title: '',
       icon: faFacebookF,
     },
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       icon: faTiktok,
     },
     {
-      href: 'https://wa.me/573243973949',
+      href: 'https://wa.me/573025442544',
       title: 'string',
       icon: faWhatsapp,
     },
