@@ -1,10 +1,5 @@
-import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
-import {
-  faFacebookF,
-  faInstagram,
-  faWhatsapp,
-  faTiktok,
-} from '@fortawesome/free-brands-svg-icons';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { PublicService } from '@services/Public/public.service';
 
@@ -17,37 +12,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   title = 'front-rpme';
 
   faBars = faBars;
-  faWhatsapp = faWhatsapp;
-  faFacebook = faFacebookF;
-  faInstagram = faInstagram;
-  faTiktok = faTiktok;
-
-  socialMedia: Array<{
-    href: string;
-    title: string;
-    icon: typeof faTiktok;
-  }> = [
-    {
-      href: 'https://www.facebook.com/people/RPMarketing/61557607667701',
-      title: '',
-      icon: faFacebookF,
-    },
-    {
-      href: 'https://www.instagram.com/rp_marketingestrategico',
-      title: 'string',
-      icon: faInstagram,
-    },
-    {
-      href: 'https://www.tiktok.com/@rp_marketingestrategico',
-      title: 'string',
-      icon: faTiktok,
-    },
-    {
-      href: 'https://wa.me/573025442544',
-      title: 'string',
-      icon: faWhatsapp,
-    },
-  ];
 
   constructor(public publicService: PublicService) {
     this.publicService.load = true;

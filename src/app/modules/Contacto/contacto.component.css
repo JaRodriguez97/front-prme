@@ -1,0 +1,99 @@
+section {
+  min-height: fit-content;
+  padding-top: 100px;
+  background: url("https://img.freepik.com/free-photo/black-brick-wall-textured-background_53876-63572.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
+  gap: 10px; /* Optional spacing between items */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+article {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(var(--color), rgb(0 0 0 / 50%));
+  animation: animateBgColor 5s linear infinite;
+  transition: 500ms;
+}
+
+@keyframes animateBgColor {
+  0% {
+    filter: hue-rotate(var(--degMin));
+  }
+  100% {
+    filter: hue-rotate(var(--deg));
+  }
+}
+
+article::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(var(--color), transparent, transparent);
+  border-radius: 50%;
+}
+
+article::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(var(--color), transparent, transparent);
+  border-radius: 50%;
+}
+
+.icon {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  z-index: 1;
+  text-align: center;
+  height: 60vh;
+}
+
+.icon svg path {
+  stroke: #fff;
+  stroke-width: 10px;
+  fill: transparent;
+  filter: drop-shadow(0 20px 10px #000) blur(2px);
+}
+
+.icon h2 {
+  position: relative;
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: normal;
+  display: inline-block;
+  overflow: hidden;
+  text-shadow: 0 10px 10px #000;
+  box-shadow: 10px 0 0 #fff;
+  /* letter-spacing: 10px; */
+  animation: textTyping 5s linear infinite;
+}
+
+@keyframes textTyping {
+  0%,
+  90%,
+  100% {
+    width: 1px;
+  }
+  30%,
+  60% {
+    width: var(--characters);
+  }
+}

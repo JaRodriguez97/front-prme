@@ -2,7 +2,12 @@ import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { environment } from '@env/environment';
-
+import {
+  faFacebookF,
+  faInstagram,
+  faWhatsapp,
+  faTiktok,
+} from '@fortawesome/free-brands-svg-icons';
 @Injectable({
   providedIn: 'root',
 })
@@ -22,6 +27,33 @@ export class PublicService {
   public medium_load!: boolean;
   public finish_load!: boolean;
   public transparentes: Array<string> = Array(15).fill('transparent');
+
+  socialMedia: Array<{
+    href: string;
+    title: string;
+    icon: typeof faTiktok;
+  }> = [
+    {
+      href: 'https://www.instagram.com/rp_marketingestrategico',
+      title: 'string',
+      icon: faInstagram,
+    },
+    {
+      href: 'https://www.facebook.com/people/RPMarketing/61557607667701',
+      title: '',
+      icon: faFacebookF,
+    },
+    {
+      href: 'https://www.tiktok.com/@rp_marketingestrategico',
+      title: 'string',
+      icon: faTiktok,
+    },
+    {
+      href: 'https://wa.me/573025442544',
+      title: 'string',
+      icon: faWhatsapp,
+    },
+  ];
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,

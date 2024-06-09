@@ -23,11 +23,13 @@
   </a>
 
   <ul class="social-media">
-    <li *ngFor="let sm of socialMedia">
-      <a [href]="sm.href" [title]="sm.title" class="btn" target="_blank">
-        <fa-icon [icon]="sm.icon" aria-hidden="true"></fa-icon>
-      </a>
-    </li>
+    <ng-container *ngIf="publicService.socialMedia.length">
+      <li *ngFor="let sm of publicService.socialMedia">
+        <a [href]="sm.href" [title]="sm.title" class="btn" target="_blank">
+          <fa-icon [icon]="sm.icon" aria-hidden="true"></fa-icon>
+        </a>
+      </li>
+    </ng-container>
   </ul>
 
   <nav [ngClass]="{ navbar: true, active: publicService.menu }">
