@@ -1,6 +1,6 @@
 section {
-  min-height: fit-content;
-  padding-top: 100px;
+  min-height: 100vh;
+  padding-top: 20vh;
   background: url("https://img.freepik.com/free-photo/black-brick-wall-textured-background_53876-63572.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -8,44 +8,43 @@ section {
   background-blend-mode: multiply;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns of equal width */
-  gap: 10px; /* Optional spacing between items */
-  overflow-y: scroll;
-  overflow-x: hidden;
+  grid-template-columns: repeat(2, 1fr);
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
-article {
+a {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   background: radial-gradient(var(--color), rgb(0 0 0 / 50%));
   animation: animateBgColor 5s linear infinite;
   transition: 500ms;
+  backdrop-filter: blur(20px);
 }
 
 @keyframes animateBgColor {
-  0% {
-    filter: hue-rotate(var(--degMin));
-  }
+  0%,
   100% {
-    filter: hue-rotate(var(--deg));
+    filter: hue-rotate(-50deg);
+  }
+  50% {
+    filter: hue-rotate(50deg);
   }
 }
 
-article::before {
+a::before {
   content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(var(--color), transparent, transparent);
-  border-radius: 50%;
+  bottom: -40vh;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
 }
 
-article::after {
+/* a::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -55,22 +54,25 @@ article::after {
   height: 800px;
   background: radial-gradient(var(--color), transparent, transparent);
   border-radius: 50%;
-}
+} */
 
 .icon {
   position: relative;
   width: 200px;
-  height: 200px;
   z-index: 1;
   text-align: center;
   height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .icon svg path {
   stroke: #fff;
   stroke-width: 10px;
   fill: transparent;
-  filter: drop-shadow(0 20px 10px #000) blur(2px);
+  filter: drop-shadow(0 20px 10px #000);
 }
 
 .icon h2 {
@@ -80,9 +82,8 @@ article::after {
   font-weight: normal;
   display: inline-block;
   overflow: hidden;
-  text-shadow: 0 10px 10px #000;
+  text-shadow: 5px 10px 10px #000;
   box-shadow: 10px 0 0 #fff;
-  /* letter-spacing: 10px; */
   animation: textTyping 5s linear infinite;
 }
 
@@ -95,5 +96,29 @@ article::after {
   30%,
   60% {
     width: var(--characters);
+  }
+}
+
+img {
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  a::before {
+    bottom: -160vh;
+  }
+}
+
+@media (max-width: 650px) {
+  a {
+    flex-direction: column;
+  }
+
+  a::before {
+    bottom: -260vh;
   }
 }
